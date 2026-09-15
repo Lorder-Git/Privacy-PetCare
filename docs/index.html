@@ -1,69 +1,255 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Informativa Privacy — PetCare</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Informativa sulla Privacy — PetCare</title>
 <style>
-  body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; color: #2C2C2C; background: #F5F0E8; line-height: 1.6; }
-  h1 { color: #1B4D5C; font-size: 30px; margin-bottom: 4px; }
-  .sottotitolo { color: #666666; margin-bottom: 32px; }
-  h2 { color: #1B4D5C; font-size: 21px; margin-top: 40px; border-bottom: 2px solid #D4A03C; padding-bottom: 6px; }
-  a { color: #1B4D5C; }
-  .box { background: white; border-radius: 12px; padding: 20px 24px; margin: 16px 0; }
+  :root {
+    --accent: #0f6b5c;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --panel: #f7f9f8;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+  h1 {
+    font-size: 1.7rem;
+    margin-bottom: 4px;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+  }
+  .warning {
+    background: #fff7ed;
+    border: 1px solid #fdba74;
+    color: #9a3412;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+  }
+  .summary {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 36px;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 44px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+  }
+  h3 {
+    font-size: 1.05rem;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
   ul { padding-left: 22px; }
-  .aggiornato { color: #666666; font-size: 14px; margin-top: 60px; border-top: 1px solid #ddd; padding-top: 16px; }
+  li { margin-bottom: 4px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.95rem;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--panel);
+  }
+  a { color: var(--accent); }
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 36px 0;
+  }
+  footer {
+    margin-top: 56px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+  }
 </style>
 </head>
 <body>
-  <h1>Informativa sulla Privacy — PetCare</h1>
-  <div class="sottotitolo">Ultimo aggiornamento: settembre 2026</div>
+<div class="wrap">
 
-  <div class="box">
-    <p>PetCare è un'app per la gestione della salute dei tuoi animali (vaccini, visite, farmaci, documenti e scadenze), sviluppata da uno sviluppatore indipendente e distribuita tramite <a href="https://marketplace-apps.com">marketplace-apps.com</a>. Questa informativa spiega quali dati vengono trattati e come.</p>
+  <h1>Informativa sulla privacy — PetCare</h1>
+  <div class="meta">Ultimo aggiornamento: 15/09/2026 &nbsp;·&nbsp; Versione: 1.0.5</div>
+
+  <div class="summary">
+    <strong>In breve.</strong> PetCare funziona principalmente sul tuo dispositivo. I dati dei tuoi animali — profili, peso, visite, vaccini, farmaci, documenti e scadenze — <strong>non vengono inviati a nessun server</strong>, né a noi né a terzi, e restano nella memoria privata dell'app sul tuo telefono. Le uniche due eccezioni dichiarate sono la funzione facoltativa di estrazione automatica delle fatture veterinarie con AI (Premium) e il pagamento dell'abbonamento Premium tramite PayPal, entrambe descritte più sotto. Non c'è registrazione, non c'è un account, non serve una connessione a internet per usare le funzioni base dell'app.
   </div>
 
-  <h2>1. Dove sono conservati i tuoi dati</h2>
-  <p>Tutti i dati che inserisci in PetCare — profili animali, pesate, visite, vaccini, farmaci, documenti e scadenze — sono salvati <strong>esclusivamente sul tuo dispositivo</strong>, in un database locale (SQLite). Non esiste un account cloud e nessuno di questi dati viene inviato o sincronizzato su server esterni durante l'uso ordinario dell'app.</p>
+  <h2>1. Titolare del trattamento</h2>
+  <p>
+    Hubert Montero / Sviluppatore indipendente / PetCare<br />
+    Email: <a href="mailto:premium@marketplace-apps.com">premium@marketplace-apps.com</a>
+  </p>
+  <p>Per qualsiasi questione relativa ai tuoi dati puoi scrivere all'indirizzo qui sopra.</p>
 
-  <h2>2. Fotocamera e file</h2>
-  <p>PetCare richiede l'accesso alla fotocamera e alla galleria per due funzioni facoltative, sempre avviate da un tuo tocco esplicito:</p>
+  <h2>2. Quali dati tratta l'app</h2>
+
+  <h3>2.1 Dati che inserisci tu</h3>
+  <p>Per gestire la salute dei tuoi animali l'app conserva quello che scrivi:</p>
   <ul>
-    <li>foto profilo dell'animale;</li>
-    <li>caricamento di documenti (referti, certificati, libretto sanitario) e fatture veterinarie.</li>
+    <li>profilo dell'animale (nome, specie, razza, data di nascita, peso)</li>
+    <li>registrazioni del peso nel tempo</li>
+    <li>visite veterinarie</li>
+    <li>vaccini e relative scadenze</li>
+    <li>farmaci e trattamenti</li>
+    <li>documenti (referti, certificati, libretto sanitario)</li>
+    <li>eventuali note</li>
   </ul>
-  <p>Questi file restano salvati localmente sul dispositivo. Non vengono caricati automaticamente altrove.</p>
+  <p>
+    Sono <strong>dati personali di natura organizzativa e sanitaria relativi ai tuoi animali</strong>. Vengono salvati esclusivamente nella memoria privata dell'app sul tuo dispositivo, in un database locale che solo PetCare può leggere.
+  </p>
+  <p><strong>Non vengono trasmessi a nessuno.</strong> Non abbiamo un server che li riceve, non abbiamo modo di leggerli, e non possiamo recuperarli se li perdi.</p>
 
-  <h2>3. Funzione "Fatture AI" (Premium)</h2>
-  <p>Se scegli di fotografare una fattura veterinaria per farne estrarre automaticamente le voci, <strong>solo quella specifica immagine</strong> viene inviata a un servizio server del marketplace, che la elabora con un modello di intelligenza artificiale per estrarre veterinario, data, voci e totale, e restituisce il risultato all'app. L'immagine non viene conservata dal servizio oltre il tempo necessario all'elaborazione. Questa funzione è opzionale: puoi sempre inserire le voci a mano.</p>
+  <h3>2.2 Foto e documenti</h3>
+  <p>
+    L'app richiede l'accesso a fotocamera e galleria per funzioni facoltative: foto del profilo dell'animale e caricamento di documenti (referti veterinari, certificati, libretto vaccinale) e fatture. Questi file restano salvati localmente sul dispositivo, con la stessa eccezione descritta al punto successivo per le fatture elaborate con AI.
+  </p>
 
-  <h2>4. Condivisione con il veterinario (Premium)</h2>
-  <p>La funzione "Condividi con il veterinario" genera un riepilogo testuale (vaccini, farmaci, visite recenti) e lo passa alle app di condivisione già presenti sul tuo dispositivo (WhatsApp, email, ecc.), scelte da te al momento. PetCare stessa non invia nulla senza la tua azione esplicita.</p>
+  <h3>2.3 Estrazione automatica delle fatture veterinarie con AI (Premium)</h3>
+  <p>
+    Quando fotografi una fattura veterinaria per farla compilare automaticamente, <strong>solo quella singola immagine</strong> viene inviata al nostro server per l'elaborazione tramite intelligenza artificiale, al solo scopo di estrarre veterinario, data, voci e importi. L'immagine non viene conservata dopo l'elaborazione e non è collegata alla tua identità: non ti chiediamo un account né un nome per usare questa funzione.
+  </p>
+  <p>
+    Se non vuoi usare questa funzione, puoi sempre compilare la fattura a mano: l'app funziona comunque in modalità manuale.
+  </p>
 
-  <h2>5. Backup cifrato (opzionale)</h2>
-  <p>Se attivi il backup, PetCare crea una copia cifrata (AES-256) dell'intero database, protetta da una password che scegli tu e che <strong>solo tu conosci</strong>. Il file di backup resta sul tuo dispositivo. I documenti/allegati non sono mai inclusi nel backup e restano sempre e solo locali. Se perdi la password, il backup non è recuperabile: non esiste un meccanismo di recupero lato server.</p>
+  <h3>2.4 Condivisione con il veterinario (Premium)</h3>
+  <p>
+    Questa funzione genera un riepilogo testuale (es. vaccini e visite recenti) e lo passa alle app di condivisione già presenti sul tuo telefono (WhatsApp, email, ecc.), scelte da te al momento. Il riepilogo non transita da nessun nostro server.
+  </p>
 
-  <h2>6. Licenza e abbonamento Premium</h2>
-  <p>L'attivazione Premium avviene tramite pagamento su PayPal collegato al marketplace. Al pagamento ricevi via email una chiave di licenza, verificata dall'app <strong>offline</strong> (nessun invio di dati personali dall'app durante la verifica). L'email usata per l'acquisto è trattata da PayPal e dal servizio di invio email del marketplace secondo le rispettive informative.</p>
+  <h3>2.5 Backup cifrato (opzionale)</h3>
+  <p>
+    Se attivi il backup, i dati (esclusi i documenti allegati) vengono cifrati con AES-256 usando una password che scegli tu e che solo tu conosci. Il file di backup resta sul tuo dispositivo, salvo lo sposti tu stesso altrove (es. su un tuo cloud personale): non lo carichiamo su nessun nostro server.
+  </p>
 
-  <h2>7. Controllo aggiornamenti</h2>
-  <p>All'avvio, PetCare contatta <code>marketplace-apps.com</code> per verificare se è disponibile una nuova versione. Questa richiesta non invia dati personali: serve solo a confrontare il numero di versione.</p>
+  <h3>2.6 Notifiche</h3>
+  <p>
+    L'app utilizza notifiche push locali per ricordarti vaccini, visite e scadenze in arrivo. Le notifiche sono generate e gestite interamente dal tuo dispositivo — non passano da nessun server esterno, non da Google, non da noi.
+  </p>
 
-  <h2>8. Notifiche locali</h2>
-  <p>I promemoria per scadenze, vaccini e farmaci sono notifiche generate e gestite interamente sul dispositivo. Non vengono inviate a server esterni.</p>
+  <h3>2.7 Cosa l'app NON fa</h3>
+  <ul>
+    <li>non raccoglie dati di utilizzo o statistiche</li>
+    <li>non usa strumenti di analisi o pubblicità</li>
+    <li>non accede alla rubrica, alla posizione o ai messaggi</li>
+    <li>non si collega ai tuoi conti bancari</li>
+    <li>non identifica il dispositivo né crea profili pubblicitari</li>
+    <li>non invia dati a server esterni, eccetto i due casi dichiarati ai punti 2.3 e nella sezione sul pagamento Premium</li>
+  </ul>
 
-  <h2>9. Nessuna pubblicità, nessuna vendita di dati</h2>
-  <p>PetCare non contiene pubblicità, non integra SDK di profilazione o analytics di terze parti, e non vende né cede a terzi i dati inseriti nell'app.</p>
+  <h2>3. Base giuridica e finalità</h2>
+  <table>
+    <tr><th>Finalità</th><th>Base giuridica</th></tr>
+    <tr><td>Conservare e mostrare i dati dei tuoi animali</td><td>Esecuzione del servizio richiesto (art. 6.1.b GDPR)</td></tr>
+    <tr><td>Inviarti notifiche di promemoria</td><td>Esecuzione del servizio richiesto</td></tr>
+    <tr><td>Estrarre i dati da una fattura fotografata (Premium, su tua richiesta)</td><td>Esecuzione del servizio richiesto, su tua azione esplicita</td></tr>
+    <tr><td>Registrare l'eventuale attivazione Premium</td><td>Legittimo interesse (art. 6.1.f GDPR)</td></tr>
+  </table>
+  <p>Non trattiamo i tuoi dati per marketing, profilazione o decisioni automatizzate.</p>
 
-  <h2>10. I tuoi diritti</h2>
-  <p>Poiché i dati restano sul tuo dispositivo, hai il controllo diretto su di essi: puoi esportarli (backup), modificarli o eliminarli in qualsiasi momento dall'app, oppure disinstallando l'app per rimuoverli definitivamente. Per richieste relative ai dati trattati dal servizio di estrazione AI fatture o dal sistema di licenza, puoi contattare lo sviluppatore all'indirizzo sotto.</p>
+  <h2>4. Per quanto tempo restano</h2>
+  <p>
+    I dati restano sul tuo dispositivo finché non li cancelli tu, o finché non disinstalli l'app. L'immagine di una fattura inviata per l'estrazione AI viene eliminata subito dopo l'elaborazione e non viene conservata sul server.
+  </p>
+  <p>Non essendoci un archivio permanente lato nostro, non esiste una copia altrove che possa sopravvivere alla cancellazione.</p>
 
-  <h2>11. Distribuzione</h2>
-  <p>PetCare è distribuita esclusivamente tramite <a href="https://marketplace-apps.com/petcare">marketplace-apps.com</a>. L'avviso di Android relativo a "origine sconosciuta" durante l'installazione è normale per qualunque app non distribuita dal Play Store e non indica un problema di sicurezza.</p>
+  <h2>5. Destinatari e trasferimenti</h2>
+  <p>
+    Nessun destinatario stabile, nessun trasferimento continuativo, né in Italia né all'estero. Le uniche trasmissioni sono momentanee e dichiarate: l'immagine di una fattura verso il nostro server per l'estrazione AI (punto 2.3, se usi quella funzione) e i dati di pagamento verso PayPal per il Premium (sezione dedicata più sotto).
+  </p>
 
-  <h2>12. Contatti</h2>
-  <p>Per domande su questa informativa o sui dati trattati, puoi contattare lo sviluppatore tramite la pagina del profilo Fiverr <a href="https://www.fiverr.com/lorderfiv">@lorderfiv</a> o tramite i contatti indicati su marketplace-apps.com.</p>
+  <h2>Distribuzione</h2>
+  <p>
+    PetCare è distribuita tramite il sito <a href="https://marketplace-apps.com">marketplace-apps.com</a>, gestito dallo stesso sviluppatore. L'APK scaricabile dal sito è firmato digitalmente.
+  </p>
 
-  <div class="aggiornato">Questa informativa può essere aggiornata in futuro; la data di ultimo aggiornamento è indicata in cima alla pagina.</div>
+  <h2>Il pagamento dell'abbonamento Premium</h2>
+  <p>
+    La gestione dei dati dei tuoi animali resta interamente sul tuo dispositivo, come descritto in questa informativa. L'acquisto dell'abbonamento Premium è un'eccezione dichiarata: quando tocchi "Vai al pagamento", l'app apre il tuo browser su una pagina di PayPal, esterna alla nostra app.
+  </p>
+  <p>
+    Su quella pagina fornisci i dati di pagamento direttamente a PayPal, non a noi: <strong>non riceviamo né vediamo mai i dati della tua carta o del tuo conto PayPal</strong>. PayPal tratta quei dati secondo la propria informativa privacy, consultabile su <a href="https://www.paypal.com/privacy">paypal.com</a>.
+  </p>
+  <p>
+    Dopo il pagamento riceverai via email una chiave di attivazione. Quella chiave, una volta incollata nell'app, viene verificata <strong>esclusivamente sul tuo dispositivo</strong>: la verifica non richiede una connessione a internet e non invia la chiave da nessuna parte.
+  </p>
+  <p>
+    L'unico dato che ci serve per generare la chiave è l'indirizzo email a cui la invii, che tratteremo solo per l'invio della chiave stessa e non per altri scopi.
+  </p>
+
+  <h2>6. I tuoi diritti</h2>
+  <p>
+    Il GDPR ti riconosce il diritto di accedere ai tuoi dati, correggerli, cancellarli, limitarne il trattamento, opporti e riceverli in un formato leggibile.
+  </p>
+  <p>Trattandosi di dati che stanno quasi interamente sul tuo dispositivo, <strong>li eserciti direttamente dall'app</strong>, senza dover scrivere a nessuno:</p>
+  <table>
+    <tr><th>Diritto</th><th>Come</th></tr>
+    <tr><td>Accesso (art. 15)</td><td>Tutti i dati dei tuoi animali sono visibili nelle rispettive schede.</td></tr>
+    <tr><td>Rettifica (art. 16)</td><td>Modifica o elimina qualsiasi voce in qualunque momento.</td></tr>
+    <tr><td>Cancellazione (art. 17)</td><td>Elimina i dati uno per uno, oppure disinstalla l'app per cancellare tutto.</td></tr>
+  </table>
+  <p>
+    Se ritieni che il trattamento violi il GDPR puoi rivolgerti al <strong>Garante per la protezione dei dati personali</strong> (<a href="https://www.garanteprivacy.it">www.garanteprivacy.it</a>) o all'autorità di controllo dello Stato in cui risiedi.
+  </p>
+
+  <h2>7. Sicurezza</h2>
+  <p>
+    I dati sono salvati nella memoria privata dell'applicazione, che il sistema operativo isola dalle altre app installate. Sui dispositivi Android moderni con blocco schermo attivo, questa memoria è cifrata dal sistema.
+  </p>
+  <p>Ti consigliamo di tenere attivo il blocco schermo del telefono e di mantenere aggiornato il sistema operativo.</p>
+  <p><strong>Fai i tuoi backup.</strong> Poiché non conserviamo copie permanenti, se perdi o formatti il telefono i dati non sono recuperabili se non hai attivato il backup cifrato descritto al punto 2.5.</p>
+
+  <h2>8. Minori</h2>
+  <p>L'app non è destinata a minori di 16 anni e non raccoglie consapevolmente dati che li riguardino.</p>
+
+  <h2>9. L'app non è un servizio veterinario</h2>
+  <p>
+    PetCare è <strong>uno strumento di organizzazione e promemoria</strong>. Le notifiche, le scadenze e i riepiloghi mostrati sono basati sui dati che inserisci tu, e non costituiscono in alcun modo una diagnosi, un consiglio o una consulenza veterinaria.
+  </p>
+  <p>Per la salute del tuo animale rivolgiti sempre a un veterinario qualificato.</p>
+
+  <h2>10. Modifiche a questa informativa</h2>
+  <p>
+    Se cambieremo questa informativa in modo sostanziale, te lo mostreremo all'apertura dell'app e ti chiederemo di prenderne visione. La data in cima al documento indica l'ultimo aggiornamento.
+  </p>
+
+  <h2>11. Contatti</h2>
+  <p><a href="mailto:premium@marketplace-apps.com">premium@marketplace-apps.com</a></p>
+  <p>Rispondiamo entro 30 giorni, come previsto dall'art. 12 GDPR.</p>
+
+  <footer>© 2026 Hubert Montero — PetCare</footer>
+
+</div>
 </body>
 </html>
