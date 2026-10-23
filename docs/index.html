@@ -99,7 +99,7 @@
 <div class="wrap">
 
   <h1>Informativa sulla privacy — PetCare</h1>
-  <div class="meta">Ultimo aggiornamento: 23/10/2026 &nbsp;·&nbsp; Versione: 2.0.0 (app PetCare 2.3.0)</div>
+  <div class="meta">Ultimo aggiornamento: 23/10/2026 &nbsp;·&nbsp; Versione: 2.1.0 (app PetCare 2.3.0)</div>
 
   <div class="summary">
     <strong>In breve.</strong> PetCare funziona sul tuo dispositivo. I dati dei tuoi animali (profili, peso, visite, vaccini, farmaci, documenti, fatture, scadenze) <strong>non vengono inviati a nessun server</strong>, né a noi né a terzi, e restano nella memoria privata dell'app sul tuo telefono. Non c'è registrazione e non c'è un account. Per usare l'app non serve internet. La connessione serve solo per: <strong>attivare e rinnovare Premium</strong> (l'app invia la chiave e un'impronta del telefono ricavata con un hash, mai i dati dei tuoi animali, punto 2.7) e <strong>controllare gli aggiornamenti</strong> (punto 2.8). L'acquisto avviene su PayPal.
@@ -169,7 +169,16 @@
   <h3>2.8 Aggiornamenti dell'app</h3>
   <p>All'avvio e dalle impostazioni l'app chiede a <code>marketplace-apps.com/api/versione/petcare</code> qual è l'ultima versione disponibile e, se ce n'è una nuova, scarica il pacchetto di installazione da <code>files.marketplace-apps.com</code> (servizio Cloudflare R2). Sei tu a confermare l'installazione. In queste richieste non viene inviato nessun dato dei tuoi animali: il server vede solo l'indirizzo IP della connessione.</p>
 
-  <h3>2.9 Cosa l'app NON fa</h3>
+  <h3>2.9 Versione web</h3>
+  <p>PetCare si può usare anche dal browser, alla pagina <code>marketplace-apps.com/petcare/web</code>. Nella versione web:</p>
+  <ul>
+    <li>i dati che inserisci sono salvati <strong>solo nel browser che usi</strong> (database locale del browser), non sui nostri server; se cancelli i dati del sito o cambi browser, non li ritrovi;</li>
+    <li>non ci sono foto, documenti, backup, notifiche né aggiornamenti;</li>
+    <li>un cookie tecnico ricorda che hai letto l'avviso iniziale;</li>
+    <li>se attivi Premium, la chiave si verifica sul server del marketplace (marketplace-apps.com), che apre una <strong>sessione Premium</strong> legata al tuo browser con un cookie tecnico (<code>httpOnly</code>, non leggibile dagli script della pagina). Il server conserva l'hash del codice di sessione, l'hash della chiave, il piano e la data di scadenza; non conserva la tua email né la chiave in chiaro. Con la stessa chiave possono essere aperte al massimo <strong>2 sessioni</strong>: aprendone una terza, la più vecchia viene chiusa e cancellata. Le sessioni scadute vengono cancellate entro 30 giorni.</li>
+  </ul>
+
+  <h3>2.10 Cosa l'app NON fa</h3>
   <ul>
     <li>non raccoglie dati di utilizzo o statistiche</li>
     <li>non usa strumenti di analisi o pubblicità</li>
@@ -186,7 +195,7 @@
     <tr><td>Inviarti notifiche di promemoria</td><td>Esecuzione del servizio richiesto</td></tr>
     <tr><td>Creare il file di backup che chiedi</td><td>Esecuzione del servizio richiesto (art. 6.1.b GDPR)</td></tr>
     <tr><td>Generare la chiave Premium e inviartela via email dopo il pagamento</td><td>Esecuzione del contratto di acquisto (art. 6.1.b)</td></tr>
-    <tr><td>Attivare Premium sul telefono, rinnovare l'attivazione e far rispettare il limite di 2 telefoni per chiave</td><td>Esecuzione del contratto di licenza (art. 6.1.b): il limite fa parte delle condizioni dell'offerta Premium</td></tr>
+    <tr><td>Attivare Premium sul telefono, rinnovare l'attivazione e far rispettare il limite di 2 telefoni per chiave; sessione Premium nella versione web (massimo 2 sessioni)</td><td>Esecuzione del contratto di licenza (art. 6.1.b): il limite fa parte delle condizioni dell'offerta Premium</td></tr>
     <tr><td>Impedire gli abusi: una sola prova gratuita per telefono, una sostituzione automatica del telefono ogni 30 giorni, blocco delle chiavi revocate</td><td>Legittimo interesse (art. 6.1.f) a prevenire usi fraudolenti delle licenze. Usiamo solo hash e date, cioè il minimo indispensabile: riteniamo che non prevalgano sui tuoi diritti. Puoi opporti (punto 6)</td></tr>
     <tr><td>Controllare e scaricare gli aggiornamenti dell'app</td><td>Legittimo interesse (art. 6.1.f) a mantenere l'app sicura e corretta; viene trattato solo l'indirizzo IP della richiesta</td></tr>
   </table>
@@ -210,7 +219,8 @@
   </p>
   <ul>
     <li><strong>Cloudflare</strong> (Stati Uniti): server delle licenze (Workers), database delle attivazioni (D1), file degli aggiornamenti (R2);</li>
-    <li><strong>Vercel</strong> (Stati Uniti): hosting del sito marketplace-apps.com (pagina di acquisto, controllo versione);</li>
+    <li><strong>Vercel</strong> (Stati Uniti): hosting del sito marketplace-apps.com e della versione web (pagina di acquisto, controllo versione, verifica della chiave web);</li>
+    <li><strong>Supabase</strong> (database ospitato nell'Unione europea, Irlanda): sessioni Premium della versione web;</li>
     <li><strong>Resend</strong> (Stati Uniti): invio delle email con la chiave;</li>
     <li><strong>PayPal (Europe) S.à r.l. et Cie, S.C.A.</strong> (Lussemburgo): pagamento, come titolare autonomo.</li>
   </ul>
