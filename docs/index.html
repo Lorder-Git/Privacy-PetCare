@@ -99,10 +99,10 @@
 <div class="wrap">
 
   <h1>Informativa sulla privacy — PetCare</h1>
-  <div class="meta">Ultimo aggiornamento: 15/09/2026 &nbsp;·&nbsp; Versione: 1.5.0</div>
+  <div class="meta">Ultimo aggiornamento: 23/10/2026 &nbsp;·&nbsp; Versione: 2.0.0 (app PetCare 2.3.0)</div>
 
   <div class="summary">
-    <strong>In breve.</strong> PetCare funziona principalmente sul tuo dispositivo. I dati dei tuoi animali — profili, peso, visite, vaccini, farmaci, documenti e scadenze — <strong>non vengono inviati a nessun server</strong>, né a noi né a terzi, e restano nella memoria privata dell'app sul tuo telefono. Le uniche due eccezioni dichiarate sono la funzione facoltativa di estrazione automatica delle fatture veterinarie con AI (Premium) e il pagamento dell'abbonamento Premium tramite PayPal, entrambe descritte più sotto. Non c'è registrazione, non c'è un account, non serve una connessione a internet per usare le funzioni base dell'app.
+    <strong>In breve.</strong> PetCare funziona sul tuo dispositivo. I dati dei tuoi animali (profili, peso, visite, vaccini, farmaci, documenti, fatture, scadenze) <strong>non vengono inviati a nessun server</strong>, né a noi né a terzi, e restano nella memoria privata dell'app sul tuo telefono. Non c'è registrazione e non c'è un account. Per usare l'app non serve internet. La connessione serve solo per: <strong>attivare e rinnovare Premium</strong> (l'app invia la chiave e un'impronta del telefono ricavata con un hash, mai i dati dei tuoi animali, punto 2.7) e <strong>controllare gli aggiornamenti</strong> (punto 2.8). L'acquisto avviene su PayPal.
   </div>
 
   <h2>1. Titolare del trattamento</h2>
@@ -132,15 +132,12 @@
 
   <h3>2.2 Foto e documenti</h3>
   <p>
-    L'app richiede l'accesso a fotocamera e galleria per funzioni facoltative: foto del profilo dell'animale e caricamento di documenti (referti veterinari, certificati, libretto vaccinale) e fatture. Questi file restano salvati localmente sul dispositivo, con la stessa eccezione descritta al punto successivo per le fatture elaborate con AI.
+    Puoi scegliere una foto del profilo dell'animale dalla galleria, allegare documenti (referti, certificati, libretto) e, con Premium, fotografare le fatture veterinarie. L'app non chiede il permesso della fotocamera: per scattare usa l'app fotocamera del telefono, che le restituisce solo la foto scattata. Foto e documenti vengono <strong>copiati nella memoria privata dell'app</strong> e non lasciano il telefono, salvo quando sei tu a condividerli.
   </p>
 
-  <h3>2.3 Estrazione automatica delle fatture veterinarie con AI (Premium)</h3>
+  <h3>2.3 Fatture veterinarie (Premium)</h3>
   <p>
-    Quando fotografi una fattura veterinaria per farla compilare automaticamente, <strong>solo quella singola immagine</strong> viene inviata al nostro server per l'elaborazione tramite intelligenza artificiale, al solo scopo di estrarre veterinario, data, voci e importi. L'immagine non viene conservata dopo l'elaborazione e non è collegata alla tua identità: non ti chiediamo un account né un nome per usare questa funzione.
-  </p>
-  <p>
-    Se non vuoi usare questa funzione, puoi sempre compilare la fattura a mano: l'app funziona comunque in modalità manuale.
+    Per ogni fattura salvi veterinario, data, totale e, se vuoi, una foto. Tutto resta sul telefono. La lettura automatica delle fatture con intelligenza artificiale <strong>non è attiva</strong> nella versione 2.3.0: nessuna immagine viene inviata a server o fornitori di AI. Se in futuro la attiveremo, aggiorneremo prima questa informativa e sarà sempre facoltativa.
   </p>
 
   <h3>2.4 Condivisione con il veterinario (Premium)</h3>
@@ -148,24 +145,38 @@
     Questa funzione genera un riepilogo testuale (es. vaccini e visite recenti) e lo passa alle app di condivisione già presenti sul tuo telefono (WhatsApp, email, ecc.), scelte da te al momento. Il riepilogo non transita da nessun nostro server.
   </p>
 
-  <h3>2.5 Backup cifrato (opzionale)</h3>
+  <h3>2.5 Backup cifrato</h3>
   <p>
-    Se attivi il backup, i dati (esclusi i documenti allegati) vengono cifrati con AES-256 usando una password che scegli tu e che solo tu conosci. Il file di backup resta sul tuo dispositivo, salvo lo sposti tu stesso altrove (es. su un tuo cloud personale): non lo carichiamo su nessun nostro server.
+    Dalle impostazioni puoi creare un file di backup dei dati (esclusi foto e documenti), cifrato con AES-256 usando una password che scegli tu e che non ci viene mai comunicata. Il file viene passato alle app di condivisione del telefono: sei tu a decidere dove salvarlo (per esempio sul tuo spazio cloud). Non lo riceviamo e non possiamo leggerlo. Se dimentichi la password, il backup non è recuperabile.
   </p>
 
   <h3>2.6 Notifiche</h3>
   <p>
-    L'app utilizza notifiche push locali per ricordarti vaccini, visite e scadenze in arrivo. Le notifiche sono generate e gestite interamente dal tuo dispositivo — non passano da nessun server esterno, non da Google, non da noi.
+    L'app usa notifiche locali per ricordarti le scadenze (il giorno prima e il giorno stesso), compresi i richiami dei vaccini e le scadenze delle polizze. Le notifiche sono programmate e mostrate dal tuo telefono: non passano da nessun server, né nostro né di Google.
   </p>
 
-  <h3>2.7 Cosa l'app NON fa</h3>
+  <h3>2.7 Attivazione di Premium sul telefono</h3>
+  <p>La chiave Premium vale al massimo su <strong>2 telefoni</strong>. Per far rispettare questo limite, quando attivi la chiave l'app si collega al nostro server delle licenze (<code>licenze.hubertmontero8514.workers.dev</code>, un servizio Cloudflare Workers gestito da noi) e invia:</p>
+  <ul>
+    <li>la <strong>chiave di licenza</strong>, che al suo interno contiene l'indirizzo email dell'acquirente, il piano e la data di scadenza;</li>
+    <li>un'<strong>impronta del telefono</strong>: un codice ricavato con una funzione di hash (SHA-256) dal nome dell'app e dall'identificativo Android del telefono (ANDROID_ID), poi accorciato. <strong>L'identificativo Android non viene mai inviato in chiaro</strong> e l'impronta è diversa per ogni app, quindi non serve a collegare il tuo uso di app diverse.</li>
+  </ul>
+  <p>La stessa richiesta viene ripetuta in automatico quando l'attivazione va rinnovata, cioè al massimo ogni 30 giorni e solo se il telefono è connesso. Il server risponde con un'attivazione firmata che l'app verifica sul telefono, anche senza connessione. La chiave e l'attivazione sono salvate nelle impostazioni dell'app, sul telefono.</p>
+  <p>Il server <strong>non conserva la tua email</strong> e non conserva la chiave in chiaro. Conserva soltanto: l'hash SHA-256 della chiave; l'impronta del telefono; il tipo di piano (per esempio se si tratta della prova gratuita); la data di attivazione e quella dell'ultimo rinnovo; se cambi telefono, la data dell'ultima sostituzione automatica (una ogni 30 giorni); se una chiave viene bloccata (per esempio dopo un rimborso o un abuso), l'hash di quella chiave.</p>
+  <p>La <strong>prova gratuita</strong> si può attivare una sola volta per telefono: per questo il server verifica se la stessa impronta l'ha già usata. Il pulsante <strong>Disattiva su questo telefono</strong>, nella schermata Premium, cancella dal server la riga che lega la chiave a quel telefono e libera il posto.</p>
+  <p>Leggere l'identificativo Android serve solo a questo, avviene solo quando attivi o rinnovi Premium, cioè un servizio che hai chiesto tu, e non è usato per pubblicità, statistiche o profilazione.</p>
+
+  <h3>2.8 Aggiornamenti dell'app</h3>
+  <p>All'avvio e dalle impostazioni l'app chiede a <code>marketplace-apps.com/api/versione/petcare</code> qual è l'ultima versione disponibile e, se ce n'è una nuova, scarica il pacchetto di installazione da <code>files.marketplace-apps.com</code> (servizio Cloudflare R2). Sei tu a confermare l'installazione. In queste richieste non viene inviato nessun dato dei tuoi animali: il server vede solo l'indirizzo IP della connessione.</p>
+
+  <h3>2.9 Cosa l'app NON fa</h3>
   <ul>
     <li>non raccoglie dati di utilizzo o statistiche</li>
     <li>non usa strumenti di analisi o pubblicità</li>
     <li>non accede alla rubrica, alla posizione o ai messaggi</li>
     <li>non si collega ai tuoi conti bancari</li>
-    <li>non identifica il dispositivo né crea profili pubblicitari</li>
-    <li>non invia dati a server esterni, eccetto i due casi dichiarati ai punti 2.3 e nella sezione sul pagamento Premium</li>
+    <li>non crea profili pubblicitari; l'impronta del telefono è usata solo per l'attivazione di Premium (punto 2.7)</li>
+    <li>non invia foto, documenti o fatture a nessun server</li>
   </ul>
 
   <h2>3. Base giuridica e finalità</h2>
@@ -173,21 +184,40 @@
     <tr><th>Finalità</th><th>Base giuridica</th></tr>
     <tr><td>Conservare e mostrare i dati dei tuoi animali</td><td>Esecuzione del servizio richiesto (art. 6.1.b GDPR)</td></tr>
     <tr><td>Inviarti notifiche di promemoria</td><td>Esecuzione del servizio richiesto</td></tr>
-    <tr><td>Estrarre i dati da una fattura fotografata (Premium, su tua richiesta)</td><td>Esecuzione del servizio richiesto, su tua azione esplicita</td></tr>
-    <tr><td>Registrare l'eventuale attivazione Premium</td><td>Legittimo interesse (art. 6.1.f GDPR)</td></tr>
+    <tr><td>Creare il file di backup che chiedi</td><td>Esecuzione del servizio richiesto (art. 6.1.b GDPR)</td></tr>
+    <tr><td>Generare la chiave Premium e inviartela via email dopo il pagamento</td><td>Esecuzione del contratto di acquisto (art. 6.1.b)</td></tr>
+    <tr><td>Attivare Premium sul telefono, rinnovare l'attivazione e far rispettare il limite di 2 telefoni per chiave</td><td>Esecuzione del contratto di licenza (art. 6.1.b): il limite fa parte delle condizioni dell'offerta Premium</td></tr>
+    <tr><td>Impedire gli abusi: una sola prova gratuita per telefono, una sostituzione automatica del telefono ogni 30 giorni, blocco delle chiavi revocate</td><td>Legittimo interesse (art. 6.1.f) a prevenire usi fraudolenti delle licenze. Usiamo solo hash e date, cioè il minimo indispensabile: riteniamo che non prevalgano sui tuoi diritti. Puoi opporti (punto 6)</td></tr>
+    <tr><td>Controllare e scaricare gli aggiornamenti dell'app</td><td>Legittimo interesse (art. 6.1.f) a mantenere l'app sicura e corretta; viene trattato solo l'indirizzo IP della richiesta</td></tr>
   </table>
   <p>Non trattiamo i tuoi dati per marketing, profilazione o decisioni automatizzate.</p>
 
   <h2>4. Per quanto tempo restano</h2>
   <p>
-    I dati restano sul tuo dispositivo finché non li cancelli tu, o finché non disinstalli l'app. L'immagine di una fattura inviata per l'estrazione AI viene eliminata subito dopo l'elaborazione e non viene conservata sul server.
+    I dati restano sul tuo dispositivo finché non li cancelli tu, o finché non disinstalli l'app. I file di backup restano dove li hai salvati tu.
   </p>
-  <p>Non essendoci un archivio permanente lato nostro, non esiste una copia altrove che possa sopravvivere alla cancellazione.</p>
+  <p>Sul server delle licenze:</p>
+  <ul>
+    <li><strong>attivazioni Premium</strong> (hash della chiave, impronta, piano, date): finché la licenza è in uso; la riga si cancella subito con <strong>Disattiva su questo telefono</strong>, e comunque quando il telefono non rinnova l'attivazione per 90 giorni;</li>
+    <li><strong>attivazioni della prova gratuita</strong>: 12 mesi dall'attivazione;</li>
+    <li><strong>data dell'ultima sostituzione del telefono</strong>: 60 giorni;</li>
+    <li><strong>hash delle chiavi bloccate</strong>: finché serve a impedirne l'uso.</li>
+  </ul>
 
   <h2>5. Destinatari e trasferimenti</h2>
   <p>
-    Nessun destinatario stabile, nessun trasferimento continuativo, né in Italia né all'estero. Le uniche trasmissioni sono momentanee e dichiarate: l'immagine di una fattura verso il nostro server per l'estrazione AI (punto 2.3, se usi quella funzione) e i dati di pagamento verso PayPal per il Premium (sezione dedicata più sotto).
+    I dati dei tuoi animali non lasciano il telefono, se non quando sei tu a condividerli. Per Premium e gli aggiornamenti ci serviamo di questi fornitori, che trattano i dati per nostro conto come responsabili del trattamento (art. 28 GDPR), salvo PayPal, che agisce come titolare autonomo:
   </p>
+  <ul>
+    <li><strong>Cloudflare</strong> (Stati Uniti): server delle licenze (Workers), database delle attivazioni (D1), file degli aggiornamenti (R2);</li>
+    <li><strong>Vercel</strong> (Stati Uniti): hosting del sito marketplace-apps.com (pagina di acquisto, controllo versione);</li>
+    <li><strong>Resend</strong> (Stati Uniti): invio delle email con la chiave;</li>
+    <li><strong>PayPal (Europe) S.à r.l. et Cie, S.C.A.</strong> (Lussemburgo): pagamento, come titolare autonomo.</li>
+  </ul>
+  <p>
+    Alcuni di questi fornitori hanno sede negli Stati Uniti o usano infrastrutture distribuite in più paesi, quindi i dati possono essere trattati fuori dall'Unione europea. In questi casi il trasferimento si basa sulla decisione di adeguatezza della Commissione europea per le aziende aderenti all'EU-U.S. Data Privacy Framework (decisione di esecuzione (UE) 2023/1795, art. 45 GDPR) oppure sulle clausole contrattuali tipo approvate dalla Commissione (art. 46 GDPR), secondo quanto indicato da ciascun fornitore nei propri documenti.
+  </p>
+  <p>Non vendiamo né cediamo i tuoi dati a nessuno.</p>
 
   <h2>Distribuzione</h2>
   <p>
@@ -202,7 +232,7 @@
     Su quella pagina fornisci i dati di pagamento direttamente a PayPal, non a noi: <strong>non riceviamo né vediamo mai i dati della tua carta o del tuo conto PayPal</strong>. PayPal tratta quei dati secondo la propria informativa privacy, consultabile su <a href="https://www.paypal.com/privacy">paypal.com</a>.
   </p>
   <p>
-    Dopo il pagamento riceverai via email una chiave di attivazione. Quella chiave, una volta incollata nell'app, viene verificata <strong>esclusivamente sul tuo dispositivo</strong>: la verifica non richiede una connessione a internet e non invia la chiave da nessuna parte.
+    Dopo il pagamento riceverai via email una chiave di attivazione. Quando la incolli nell'app, la firma della chiave viene controllata sul telefono e poi la chiave viene attivata sul server delle licenze come descritto al punto 2.7.
   </p>
   <p>
     L'unico dato che ci serve per generare la chiave è l'indirizzo email a cui la invii, che tratteremo solo per l'invio della chiave stessa e non per altri scopi.
