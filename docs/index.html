@@ -99,10 +99,10 @@
 <div class="wrap">
 
   <h1>Informativa sulla privacy — PetCare</h1>
-  <div class="meta">Ultimo aggiornamento: 26/10/2026 &nbsp;·&nbsp; Versione: 2.3.0 (app PetCare 2.4.0)</div>
+  <div class="meta">Ultimo aggiornamento: 27/10/2026 &nbsp;·&nbsp; Versione: 2.4.0 (app PetCare 2.4.1)</div>
 
   <div class="summary">
-    <strong>In breve.</strong> PetCare funziona sul tuo dispositivo. I dati dei tuoi animali (profili, peso, visite, vaccini, farmaci, documenti, fatture, scadenze) <strong>non vengono inviati a nessun server</strong>, né a noi né a terzi, e restano nella memoria privata dell'app sul tuo telefono. Non c'è registrazione e non c'è un account. Per usare l'app non serve internet. La connessione serve solo per: <strong>attivare e rinnovare Premium</strong> (l'app invia la chiave e un'impronta del telefono ricavata con un hash, mai i dati dei tuoi animali, punto 2.7) e <strong>controllare gli aggiornamenti</strong> (punto 2.8). L'acquisto avviene su PayPal. <strong>Solo se hai il piano Premium AI e scegli di usarla</strong>, la lettura automatica di una fattura del veterinario manda il testo letto dalla foto (non la foto) all'intelligenza artificiale di Cloudflare, che non lo conserva (punto 2.3).
+    <strong>In breve.</strong> PetCare funziona sul tuo dispositivo. I dati dei tuoi animali (profili, peso, visite, vaccini, farmaci, documenti, fatture, scadenze) <strong>non vengono inviati a nessun server</strong>, né a noi né a terzi, e restano nella memoria privata dell'app sul tuo telefono. Non c'è registrazione e non c'è un account. Per usare l'app non serve internet. La connessione serve solo per: <strong>attivare e rinnovare Premium</strong> (l'app invia la chiave e un'impronta del telefono ricavata con un hash, mai i dati dei tuoi animali, punto 2.7) e <strong>controllare gli aggiornamenti</strong> (punto 2.8). L'acquisto avviene su PayPal. <strong>Solo se hai il piano Premium AI e scegli di usarla</strong>, la lettura automatica di una fattura del veterinario manda il testo letto dalla foto all'intelligenza artificiale di Cloudflare, che non lo conserva. La foto della fattura parte solo se la lettura sul telefono non riesce e tu tocchi <strong>Invia la foto</strong>: anche in quel caso non viene conservata (punto 2.3).
   </div>
 
   <h2>1. Titolare del trattamento</h2>
@@ -132,24 +132,36 @@
 
   <h3>2.2 Foto e documenti</h3>
   <p>
-    Puoi scegliere una foto del profilo dell'animale dalla galleria, allegare documenti (referti, certificati, libretto) e, con Premium, fotografare le fatture veterinarie. L'app non chiede il permesso della fotocamera: per scattare usa l'app fotocamera del telefono, che le restituisce solo la foto scattata. Foto e documenti vengono <strong>copiati nella memoria privata dell'app</strong> e non lasciano il telefono, salvo quando sei tu a condividerli.
+    Puoi scegliere una foto del profilo dell'animale dalla galleria, allegare documenti (referti, certificati, libretto) e, con Premium, fotografare le fatture veterinarie. L'app non chiede il permesso della fotocamera: per scattare usa l'app fotocamera del telefono, che le restituisce solo la foto scattata. Foto e documenti vengono <strong>copiati nella memoria privata dell'app</strong> e non lasciano il telefono, salvo quando sei tu a condividerli. Unica eccezione: con il piano Premium AI, se la lettura automatica di una fattura non riesce, l'app ti chiede se vuoi inviare la foto di quella fattura, e la invia solo se accetti (punto 2.3).
   </p>
 
   <h3>2.3 Fatture veterinarie (Premium)</h3>
   <p>
-    Per ogni fattura salvi veterinario, data, totale e, se vuoi, una foto. Tutto resta sul telefono.
+    Per ogni fattura salvi veterinario, data, totale e, se vuoi, una foto. Tutto resta sul telefono, salvo i casi descritti qui sotto per la lettura automatica.
   </p>
   <p>
     <strong>Lettura automatica con l'intelligenza artificiale (solo piano Premium AI, facoltativa).</strong> Se hai il piano Premium AI e scegli di usarla, l'app compila la fattura al posto tuo. Ecco cosa succede, passo per passo:
   </p>
   <ol>
-    <li><strong>Sul telefono.</strong> L'app legge il testo della foto della fattura direttamente sul telefono, con il riconoscimento del testo di Google ML Kit, che funziona sul dispositivo. <strong>La foto non viene inviata a nessuno</strong>, né a noi né a Google. ML Kit, per funzionare, invia a Google dati tecnici di diagnostica: modello e sistema operativo del telefono, nome e versione dell'app, tempi di elaborazione, formato e dimensione dell'immagine, un identificativo dell'installazione. Google dichiara che questi dati non contengono l'immagine e non vengono passati a terzi (<a href="https://developers.google.com/ml-kit/android-data-disclosure" target="_blank" rel="noopener">pagina di Google su ML Kit</a>).</li>
+    <li><strong>Sul telefono.</strong> L'app legge il testo della foto della fattura direttamente sul telefono, con il riconoscimento del testo di Google ML Kit, che funziona sul dispositivo. <strong>In questo passaggio la foto non viene inviata a nessuno</strong>, né a noi né a Google (per l'unico caso in cui può partire, sempre su tua scelta, vedi più sotto). ML Kit, per funzionare, invia a Google dati tecnici di diagnostica: modello e sistema operativo del telefono, nome e versione dell'app, tempi di elaborazione, formato e dimensione dell'immagine, un identificativo dell'installazione. Google dichiara che questi dati non contengono l'immagine e non vengono passati a terzi (<a href="https://developers.google.com/ml-kit/android-data-disclosure" target="_blank" rel="noopener">pagina di Google su ML Kit</a>).</li>
     <li><strong>Il testo va al nostro server.</strong> Solo il testo letto (al massimo i primi 4.000 caratteri) viene inviato a <code>marketplace-apps.com/api/fatture/estrai</code>, insieme all'attivazione Premium AI che serve a verificare che il piano sia attivo. Il nostro server non salva il testo: lo inoltra e restituisce il risultato all'app.</li>
     <li><strong>L'intelligenza artificiale lo legge.</strong> Il testo viene analizzato da <strong>Cloudflare Workers AI</strong> (modello Qwen), che risponde con veterinario, data, totale e voci della fattura. Cloudflare dichiara che per questo servizio non conserva il testo né la risposta dopo aver elaborato la richiesta e che <strong>non li usa per addestrare modelli di intelligenza artificiale</strong> (<a href="https://developers.cloudflare.com/workers-ai/platform/data-usage/" target="_blank">pagina di Cloudflare sull'uso dei dati</a>).</li>
     <li><strong>Decidi tu.</strong> I dati letti compaiono nella fattura sul telefono: puoi controllarli e correggerli. Restano solo sul telefono, come tutto il resto.</li>
   </ol>
   <p>
-    <strong>Attenzione:</strong> una fattura può contenere dati personali, per esempio il tuo nome, l'indirizzo o il codice fiscale. Se non vuoi inviarne il testo, inserisci i dati a mano: senza la lettura automatica non parte niente. L'intelligenza artificiale può sbagliare: controlla sempre importi e date.
+    <strong>Se la lettura non riesce: invio della foto, solo se lo scegli tu (dalla versione 2.4.1 dell'app, solo su Android).</strong> Può capitare che sul telefono il testo non si riesca a leggere (ML Kit va in errore o il testo è illeggibile), oppure che l'intelligenza artificiale non trovi i dati nel testo. In questi casi l'app ti mostra un messaggio e ti chiede se vuoi inviare la <strong>foto</strong> della fattura al nostro server per farla leggere direttamente all'intelligenza artificiale.
+  </p>
+  <ul>
+    <li>Se tocchi <strong>Non ora</strong>, non parte niente: la fattura resta sul telefono e puoi completarla a mano.</li>
+    <li>Se tocchi <strong>Invia la foto</strong>, l'app prima la rimpicciolisce sul telefono (al massimo 1600 pixel per lato, formato JPEG) e toglie i metadati della foto (EXIF), compresa l'eventuale posizione GPS. Poi la invia in modo cifrato (HTTPS) a <code>marketplace-apps.com/api/fatture/estrai</code>, insieme all'attivazione Premium AI.</li>
+    <li>Il nostro server passa la foto a <strong>Cloudflare Workers AI</strong> (un modello in grado di leggere le immagini), che risponde con veterinario, data, totale e voci della fattura, come per il testo.</li>
+    <li><strong>La foto non viene salvata</strong>: né sul nostro server né sullo spazio di archiviazione dei file (Cloudflare R2). Non finisce nei registri del server: lì annotiamo solo quanto è durata la richiesta e quanto pesava la foto (in KB). Per Cloudflare Workers AI vale quanto detto sopra: secondo la stessa <a href="https://developers.cloudflare.com/workers-ai/platform/data-usage/" target="_blank" rel="noopener">pagina di Cloudflare sull'uso dei dati</a>, i dati inviati non vengono conservati dopo l'elaborazione e non vengono usati per addestrare modelli.</li>
+  </ul>
+  <p>
+    La foto di una fattura mostra tutto quello che il veterinario ha stampato: può contenere <strong>dati personali tuoi</strong> (per esempio nome, indirizzo, codice fiscale) e <strong>dati del veterinario o della clinica</strong> (nome, indirizzo, partita IVA). Inviarla è una tua scelta, fatta ogni volta: se preferisci non farlo, tocca <strong>Non ora</strong> e inserisci i dati a mano.
+  </p>
+  <p>
+    <strong>Attenzione:</strong> una fattura può contenere dati personali, per esempio il tuo nome, l'indirizzo o il codice fiscale. Se non vuoi inviarne il testo o la foto, inserisci i dati a mano: senza la lettura automatica non parte niente. L'intelligenza artificiale può sbagliare: controlla sempre importi e date.
   </p>
 
   <h3>2.4 Condivisione con il veterinario (Premium)</h3>
@@ -197,7 +209,7 @@
     <li>non accede alla rubrica, alla posizione o ai messaggi</li>
     <li>non si collega ai tuoi conti bancari</li>
     <li>non crea profili pubblicitari; l'impronta del telefono è usata solo per l'attivazione di Premium (punto 2.7)</li>
-    <li>non invia foto o documenti a nessun server; delle fatture invia solo il testo letto, e solo se usi la lettura automatica con Premium AI (punto 2.3)</li>
+    <li>non invia foto o documenti a nessun server, con una sola eccezione: con la lettura automatica Premium AI delle fatture invia il testo letto e, solo se la lettura sul telefono non riesce e tu tocchi <strong>Invia la foto</strong>, la foto di quella fattura (punto 2.3)</li>
   </ul>
 
   <h2>3. Base giuridica e finalità</h2>
@@ -209,7 +221,7 @@
     <tr><td>Generare la chiave Premium e inviartela via email dopo il pagamento</td><td>Esecuzione del contratto di acquisto (art. 6.1.b)</td></tr>
     <tr><td>Attivare Premium sul telefono, rinnovare l'attivazione e far rispettare il limite di 2 telefoni per chiave; sessione Premium nella versione web (massimo 2 sessioni)</td><td>Esecuzione del contratto di licenza (art. 6.1.b): il limite fa parte delle condizioni dell'offerta Premium</td></tr>
     <tr><td>Impedire gli abusi: una sola prova gratuita per telefono, una sostituzione automatica del telefono ogni 30 giorni, blocco delle chiavi revocate</td><td>Legittimo interesse (art. 6.1.f) a prevenire usi fraudolenti delle licenze. Usiamo solo hash e date, cioè il minimo indispensabile: riteniamo che non prevalgano sui tuoi diritti. Puoi opporti (punto 6)</td></tr>
-    <tr><td>Leggere i dati di una fattura con l'intelligenza artificiale, quando lo chiedi tu (piano Premium AI)</td><td>Esecuzione del servizio richiesto (art. 6.1.b): è una funzione del piano che hai acquistato e la usi solo quando vuoi</td></tr>
+    <tr><td>Leggere i dati di una fattura con l'intelligenza artificiale, quando lo chiedi tu (piano Premium AI): dal testo letto sul telefono e, se questa lettura non riesce e accetti, dalla foto della fattura</td><td>Esecuzione del servizio richiesto (art. 6.1.b): è una funzione del piano che hai acquistato e la usi solo quando vuoi; la foto parte solo dopo che hai toccato <strong>Invia la foto</strong></td></tr>
     <tr><td>Controllare e scaricare gli aggiornamenti dell'app</td><td>Legittimo interesse (art. 6.1.f) a mantenere l'app sicura e corretta; viene trattato solo l'indirizzo IP della richiesta</td></tr>
   </table>
   <p>Non trattiamo i tuoi dati per marketing, profilazione o decisioni automatizzate.</p>
@@ -218,7 +230,7 @@
   <p>
     I dati restano sul tuo dispositivo finché non li cancelli tu, o finché non disinstalli l'app. I file di backup restano dove li hai salvati tu.
   </p>
-  <p>Il testo di una fattura inviato per la lettura automatica (punto 2.3) <strong>non viene conservato</strong>: il nostro server lo inoltra e Cloudflare Workers AI lo elabora senza conservarlo dopo la risposta.</p>
+  <p>Il testo e l'eventuale foto di una fattura inviati per la lettura automatica (punto 2.3) <strong>non vengono conservati</strong>: il nostro server li inoltra e Cloudflare Workers AI li elabora senza conservarli dopo la risposta. Nei registri del server, per una foto, restano solo la durata della richiesta e la dimensione in KB.</p>
   <p>Sul server delle licenze:</p>
   <ul>
     <li><strong>attivazioni Premium</strong> (hash della chiave, impronta, piano, date): finché la licenza è in uso; la riga si cancella subito con <strong>Disattiva su questo telefono</strong>, e comunque quando il telefono non rinnova l'attivazione per 90 giorni;</li>
@@ -232,8 +244,8 @@
     I dati dei tuoi animali non lasciano il telefono, se non quando sei tu a condividerli. Per Premium e gli aggiornamenti ci serviamo di questi fornitori, che trattano i dati per nostro conto come responsabili del trattamento (art. 28 GDPR), salvo PayPal, che agisce come titolare autonomo:
   </p>
   <ul>
-    <li><strong>Cloudflare</strong> (Stati Uniti): server delle licenze (Workers), database delle attivazioni (D1), file degli aggiornamenti (R2), intelligenza artificiale che legge il testo delle fatture (Workers AI, solo piano Premium AI);</li>
-    <li><strong>Vercel</strong> (Stati Uniti): hosting del sito marketplace-apps.com e della versione web (pagina di acquisto, controllo versione, verifica della chiave web, passaggio del testo delle fatture verso l'intelligenza artificiale);</li>
+    <li><strong>Cloudflare</strong> (Stati Uniti): server delle licenze (Workers), database delle attivazioni (D1), file degli aggiornamenti (R2), intelligenza artificiale che legge il testo delle fatture e, se lo scegli, la foto (Workers AI, solo piano Premium AI);</li>
+    <li><strong>Vercel</strong> (Stati Uniti): hosting del sito marketplace-apps.com e della versione web (pagina di acquisto, controllo versione, verifica della chiave web, passaggio del testo delle fatture, e della foto se scegli di inviarla, verso l'intelligenza artificiale);</li>
     <li><strong>Supabase</strong> (database ospitato nell'Unione europea, Irlanda): sessioni Premium della versione web;</li>
     <li><strong>Resend</strong> (Stati Uniti): invio delle email con la chiave;</li>
     <li><strong>PayPal (Europe) S.à r.l. et Cie, S.C.A.</strong> (Lussemburgo): pagamento, come titolare autonomo.</li>
@@ -241,7 +253,7 @@
   <p>
     Alcuni di questi fornitori hanno sede negli Stati Uniti o usano infrastrutture distribuite in più paesi, quindi i dati possono essere trattati fuori dall'Unione europea. In questi casi il trasferimento si basa sulla decisione di adeguatezza della Commissione europea per le aziende aderenti all'EU-U.S. Data Privacy Framework (decisione di esecuzione (UE) 2023/1795, art. 45 GDPR) oppure sulle clausole contrattuali tipo approvate dalla Commissione (art. 46 GDPR), secondo quanto indicato da ciascun fornitore nei propri documenti.
   </p>
-  <p>L'unico fornitore di intelligenza artificiale è Cloudflare Workers AI, e riceve solo il testo delle fatture che scegli di far leggere. I dati dei tuoi animali non vengono mai inviati a nessun fornitore di intelligenza artificiale.</p>
+  <p>L'unico fornitore di intelligenza artificiale è Cloudflare Workers AI, e riceve solo il testo delle fatture che scegli di far leggere e, se tocchi <strong>Invia la foto</strong>, la foto di quella fattura. I dati dei tuoi animali non vengono mai inviati a nessun fornitore di intelligenza artificiale.</p>
   <p>Non vendiamo né cediamo i tuoi dati a nessuno.</p>
 
   <h2>Distribuzione</h2>
