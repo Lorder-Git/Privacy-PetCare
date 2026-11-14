@@ -99,10 +99,10 @@
 <div class="wrap">
 
   <h1>Informativa sulla privacy — PetCare</h1>
-  <div class="meta">Ultimo aggiornamento: 27/10/2026 &nbsp;·&nbsp; Versione: 2.4.0 (app PetCare 2.4.1)</div>
+  <div class="meta">Ultimo aggiornamento: 14/11/2026 &nbsp;·&nbsp; Versione: 2.5.0 (app PetCare 2.4.2)</div>
 
   <div class="summary">
-    <strong>In breve.</strong> PetCare funziona sul tuo dispositivo. I dati dei tuoi animali (profili, peso, visite, vaccini, farmaci, documenti, fatture, scadenze) <strong>non vengono inviati a nessun server</strong>, né a noi né a terzi, e restano nella memoria privata dell'app sul tuo telefono. Non c'è registrazione e non c'è un account. Per usare l'app non serve internet. La connessione serve solo per: <strong>attivare e rinnovare Premium</strong> (l'app invia la chiave e un'impronta del telefono ricavata con un hash, mai i dati dei tuoi animali, punto 2.7) e <strong>controllare gli aggiornamenti</strong> (punto 2.8). L'acquisto avviene su PayPal. <strong>Solo se hai il piano Premium AI e scegli di usarla</strong>, la lettura automatica di una fattura del veterinario manda il testo letto dalla foto all'intelligenza artificiale di Cloudflare, che non lo conserva. La foto della fattura parte solo se la lettura sul telefono non riesce e tu tocchi <strong>Invia la foto</strong>: anche in quel caso non viene conservata (punto 2.3).
+    <strong>In breve.</strong> PetCare funziona sul tuo dispositivo. I dati dei tuoi animali (profili, peso, visite, vaccini, farmaci, documenti, fatture, scadenze) <strong>non vengono inviati a nessun server</strong>, né a noi né a terzi, e restano nella memoria privata dell'app sul tuo telefono. Non c'è registrazione e non c'è un account. Per usare l'app non serve internet. La connessione serve solo per: <strong>attivare e rinnovare Premium</strong> (l'app invia la chiave e un'impronta del telefono ricavata con un hash, mai i dati dei tuoi animali, punto 2.7) e <strong>controllare gli aggiornamenti</strong> (punto 2.8). L'acquisto avviene su PayPal. <strong>Solo se hai il piano Premium AI e scegli di usarla</strong>, la lettura automatica di una fattura del veterinario manda il testo letto dalla foto all'intelligenza artificiale di Cloudflare, che non lo conserva. La foto della fattura parte solo se la lettura sul telefono non riesce e tu tocchi <strong>Invia la foto</strong>: anche in quel caso non viene conservata. Il server tiene solo un contatore delle letture del mese, senza la tua email in chiaro (punto 2.3).
   </div>
 
   <h2>1. Titolare del trattamento</h2>
@@ -164,6 +164,10 @@
     <strong>Attenzione:</strong> una fattura può contenere dati personali, per esempio il tuo nome, l'indirizzo o il codice fiscale. Se non vuoi inviarne il testo o la foto, inserisci i dati a mano: senza la lettura automatica non parte niente. L'intelligenza artificiale può sbagliare: controlla sempre importi e date.
   </p>
 
+  <p>
+    <strong>Tetto mensile delle letture (dal 14 novembre 2026).</strong> Il piano Premium AI comprende fino a <strong>50 letture al mese</strong>, che si tratti del testo o della foto di una fattura. Per farlo rispettare, a ogni lettura il nostro server aggiorna un contatore nel database del marketplace (Supabase, Unione europea). Il contatore contiene soltanto: un'<strong>impronta della licenza</strong> (un codice ricavato con una funzione di hash (SHA-256) e una chiave segreta che conosciamo solo noi, calcolato dall'email contenuta nella chiave di licenza oppure, se la chiave non contiene l'email, dall'impronta del telefono; <strong>l'email non viene mai salvata in chiaro</strong>); il nome dell'app e il <strong>mese</strong> (per esempio 2026-11); il <strong>numero di letture</strong> usate nel mese e la data dell'ultimo aggiornamento. Nel contatore <strong>non ci sono il testo, la foto o i dati delle fatture</strong>, né il tuo indirizzo IP. Se una lettura non va a buon fine per un problema nostro (per esempio l'intelligenza artificiale non risponde), la lettura ti viene restituita. Finite le letture del mese, l'app te lo dice: ripartono dal 1° del mese successivo e puoi sempre inserire i dati a mano. I contatori vengono cancellati automaticamente 30 giorni dopo la fine del mese a cui si riferiscono.
+  </p>
+
   <h3>2.4 Condivisione con il veterinario (Premium)</h3>
   <p>
     Questa funzione genera un riepilogo testuale (es. vaccini e visite recenti) e lo passa alle app di condivisione già presenti sul tuo telefono (WhatsApp, email, ecc.), scelte da te al momento. Il riepilogo non transita da nessun nostro server.
@@ -222,6 +226,7 @@
     <tr><td>Attivare Premium sul telefono, rinnovare l'attivazione e far rispettare il limite di 2 telefoni per chiave; sessione Premium nella versione web (massimo 2 sessioni)</td><td>Esecuzione del contratto di licenza (art. 6.1.b): il limite fa parte delle condizioni dell'offerta Premium</td></tr>
     <tr><td>Impedire gli abusi: una sola prova gratuita per telefono, una sostituzione automatica del telefono ogni 30 giorni, blocco delle chiavi revocate</td><td>Legittimo interesse (art. 6.1.f) a prevenire usi fraudolenti delle licenze. Usiamo solo hash e date, cioè il minimo indispensabile: riteniamo che non prevalgano sui tuoi diritti. Puoi opporti (punto 6)</td></tr>
     <tr><td>Leggere i dati di una fattura con l'intelligenza artificiale, quando lo chiedi tu (piano Premium AI): dal testo letto sul telefono e, se questa lettura non riesce e accetti, dalla foto della fattura</td><td>Esecuzione del servizio richiesto (art. 6.1.b): è una funzione del piano che hai acquistato e la usi solo quando vuoi; la foto parte solo dopo che hai toccato <strong>Invia la foto</strong></td></tr>
+    <tr><td>Contare le letture AI del mese per far rispettare il limite del piano Premium AI (50 al mese) e restituire quelle non riuscite per un problema nostro</td><td>Esecuzione del contratto (art. 6.1.b): il numero di letture incluse è una condizione del piano, e il contatore è il minimo necessario per applicarla</td></tr>
     <tr><td>Controllare e scaricare gli aggiornamenti dell'app</td><td>Legittimo interesse (art. 6.1.f) a mantenere l'app sicura e corretta; viene trattato solo l'indirizzo IP della richiesta</td></tr>
   </table>
   <p>Non trattiamo i tuoi dati per marketing, profilazione o decisioni automatizzate.</p>
@@ -231,6 +236,7 @@
     I dati restano sul tuo dispositivo finché non li cancelli tu, o finché non disinstalli l'app. I file di backup restano dove li hai salvati tu.
   </p>
   <p>Il testo e l'eventuale foto di una fattura inviati per la lettura automatica (punto 2.3) <strong>non vengono conservati</strong>: il nostro server li inoltra e Cloudflare Workers AI li elabora senza conservarli dopo la risposta. Nei registri del server, per una foto, restano solo la durata della richiesta e la dimensione in KB.</p>
+  <p>Il <strong>contatore mensile delle letture AI</strong> (impronta della licenza, mese, numero di letture) viene cancellato automaticamente 30 giorni dopo la fine del mese a cui si riferisce.</p>
   <p>Sul server delle licenze:</p>
   <ul>
     <li><strong>attivazioni Premium</strong> (hash della chiave, impronta, piano, date): finché la licenza è in uso; la riga si cancella subito con <strong>Disattiva su questo telefono</strong>, e comunque quando il telefono non rinnova l'attivazione per 90 giorni;</li>
@@ -246,7 +252,7 @@
   <ul>
     <li><strong>Cloudflare</strong> (Stati Uniti): server delle licenze (Workers), database delle attivazioni (D1), file degli aggiornamenti (R2), intelligenza artificiale che legge il testo delle fatture e, se lo scegli, la foto (Workers AI, solo piano Premium AI);</li>
     <li><strong>Vercel</strong> (Stati Uniti): hosting del sito marketplace-apps.com e della versione web (pagina di acquisto, controllo versione, verifica della chiave web, passaggio del testo delle fatture, e della foto se scegli di inviarla, verso l'intelligenza artificiale);</li>
-    <li><strong>Supabase</strong> (database ospitato nell'Unione europea, Irlanda): sessioni Premium della versione web;</li>
+    <li><strong>Supabase</strong> (database ospitato nell'Unione europea, Irlanda): sessioni Premium della versione web e contatori mensili delle letture AI;</li>
     <li><strong>Resend</strong> (Stati Uniti): invio delle email con la chiave;</li>
     <li><strong>PayPal (Europe) S.à r.l. et Cie, S.C.A.</strong> (Lussemburgo): pagamento, come titolare autonomo.</li>
   </ul>
@@ -286,6 +292,7 @@
     <tr><td>Rettifica (art. 16)</td><td>Modifica o elimina qualsiasi voce in qualunque momento.</td></tr>
     <tr><td>Cancellazione (art. 17)</td><td>Elimina i dati uno per uno, oppure disinstalla l'app per cancellare tutto.</td></tr>
   </table>
+  <p>Per i dati sul server (attivazioni, sessioni web, contatori delle letture AI) scrivici all'indirizzo del punto 11: poiché non teniamo la tua email in chiaro, per trovare i dati che ti riguardano ti chiederemo la chiave di licenza.</p>
   <p>
     Se ritieni che il trattamento violi il GDPR puoi rivolgerti al <strong>Garante per la protezione dei dati personali</strong> (<a href="https://www.garanteprivacy.it">www.garanteprivacy.it</a>) o all'autorità di controllo dello Stato in cui risiedi.
   </p>
